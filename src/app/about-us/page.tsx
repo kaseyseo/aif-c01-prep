@@ -51,6 +51,10 @@ export default function AboutUsPage() {
                         </Button>
                     </form>
                 </div>
+
+                <div className="mt-8 text-center text-sm text-slate-500">
+                    This site is not affiliated with, endorsed by, or sponsored by Amazon Web Services.
+                </div>
             </div>
         </div>
     );
