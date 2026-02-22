@@ -20,6 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8765514781671871" crossOrigin="anonymous"></script>
+      </head>
       <body className={cn(
         "min-h-screen bg-background font-sans antialiased",
         inter.variable
