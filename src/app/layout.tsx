@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8765514781671871" crossOrigin="anonymous" strategy="afterInteractive" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8765514781671871" crossOrigin="anonymous"></script>
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-Q4YV7DX48P" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
