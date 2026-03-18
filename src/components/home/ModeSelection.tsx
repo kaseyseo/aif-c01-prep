@@ -17,84 +17,78 @@ export function ModeSelection() {
     };
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl mx-auto font-['Inter',sans-serif]">
 
-            {/* Practice Test Card (previously Mock Exam) */}
-            <div className="group relative rounded-3xl bg-[#0b0c10] border border-white/5 p-8 flex flex-col gap-6 transition-all duration-300 shadow-2xl">
+            {/* Mock Test Card (previously Mock Exam) */}
+            <div className="group relative rounded-3xl bg-white border border-gray-100 p-8 flex flex-col gap-6 transition-all duration-300">
                 <div className="space-y-6">
                     <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 shrink-0 rounded-xl bg-blue-600 flex items-center justify-center shadow-lg shadow-blue-900/40">
-                            <Clock className="w-6 h-6 text-white" />
+                        <div className="w-10 h-10 shrink-0 rounded-xl bg-emerald-50 flex items-center justify-center">
+                            <Clock className="w-5 h-5 text-emerald-500" />
                         </div>
-                        <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">Practice Test</h2>
+                        <h2 className="text-[20px] font-bold text-slate-900 tracking-tight">Mock Test</h2>
                     </div>
-                    <p className="text-slate-400 text-[15px] leading-relaxed">
+                    <p className="text-slate-500 text-[16px] font-['Roboto',sans-serif] leading-relaxed min-h-[48px]">
                         Simulate the actual AWS Certified AI Practitioner exam environment under time pressure.
                     </p>
                 </div>
 
                 <div className="mt-auto space-y-6">
                     {/* Stats Row */}
-                    <div className="flex items-center gap-4 p-4 rounded-xl bg-[#0e1016] border border-white/5">
-                        <div className="flex items-center gap-3 flex-1 border-r border-white/5">
-                            <div className="p-2 rounded-lg bg-blue-600/10">
-                                <List className="w-5 h-5 text-blue-500" />
-                            </div>
-                            <span className="text-sm font-semibold text-white">65 questions</span>
+                    <div className="flex justify-start items-center gap-2 font-['Roboto',sans-serif]">
+                        <div className="flex items-center gap-2">
+                            <List className="w-[11.67px] h-[11.67px] text-emerald-500" />
+                            <span className="text-[16px] text-slate-500">65 questions</span>
                         </div>
-                        <div className="flex items-center gap-3 flex-1 pl-2">
-                            <div className="p-2 rounded-lg bg-blue-600/10">
-                                <Clock className="w-5 h-5 text-blue-500" />
-                            </div>
-                            <span className="text-sm font-semibold text-white">90 mins</span>
+                        <span className="text-[13px] text-slate-500 mx-1">•</span>
+                        <div className="flex items-center gap-2">
+                            <Clock className="w-[11.67px] h-[11.67px] text-emerald-500" />
+                            <span className="text-[16px] text-slate-500">90 mins</span>
                         </div>
                     </div>
 
                     <Button
                         onClick={() => handleStart("mock")}
-                        className="w-full h-14 text-base font-bold bg-blue-600 hover:bg-blue-500 text-white rounded-xl tracking-wide shadow-lg shadow-blue-900/20"
+                        className="w-full h-14 text-[16px] font-bold font-['Liberation_Sans',sans-serif] bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl transition-all flex items-center justify-center gap-2"
                     >
-                        START <ArrowRight className="ml-2 w-5 h-5" />
+                        START <ArrowRight className="w-4 h-4" />
                     </Button>
                 </div>
             </div>
 
             {/* Flashcards Card */}
-            <div className="group relative rounded-3xl bg-[#0b0c10] border border-white/5 p-8 flex flex-col gap-6 transition-all duration-300 shadow-2xl">
+            <div className="group relative rounded-3xl bg-white border border-slate-200 p-8 flex flex-col gap-6 transition-all duration-300">
                 <div className="space-y-6">
                     <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 shrink-0 rounded-xl bg-orange-500 flex items-center justify-center shadow-lg shadow-orange-900/40">
-                            <Zap className="w-6 h-6 text-white" />
+                        <div className="w-10 h-10 shrink-0 rounded-xl bg-emerald-50 flex items-center justify-center">
+                            <Zap className="w-5 h-5 text-emerald-500" />
                         </div>
-                        <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">Flashcards</h2>
+                        <h2 className="text-[20px] font-bold text-slate-900 tracking-tight">Flashcards</h2>
                     </div>
-                    <p className="text-slate-400 text-[15px] leading-relaxed">
+                    <p className="text-slate-500 text-[16px] font-['Roboto',sans-serif] leading-relaxed min-h-[48px]">
                         View the answer and detailed explanations after each question.
                     </p>
                 </div>
 
                 <div className="mt-auto space-y-6">
                     {/* Stats Row */}
-                    <div className="flex items-center gap-4 p-4 rounded-xl bg-[#0e1016] border border-white/5">
-                        <div className="flex items-center gap-3 flex-1 border-r border-white/5">
-                            <div className="p-2 rounded-lg bg-orange-500/10">
-                                <List className="w-5 h-5 text-orange-500" />
-                            </div>
-                            <span className="text-sm font-semibold text-white">10 questions</span>
+                    <div className="flex justify-start items-center gap-2 font-['Roboto',sans-serif]">
+                        <div className="flex items-center gap-2">
+                            <Zap className="w-[11.67px] h-[11.67px] text-emerald-500" />
+                            <span className="text-[16px] text-slate-500">10 questions</span>
                         </div>
-                        <div className="flex items-center gap-3 flex-1 pl-2">
-                            <div className="p-2 rounded-lg bg-orange-500/10">
-                                <Clock className="w-5 h-5 text-orange-500" />
-                            </div>
-                            <span className="text-sm font-semibold text-white">Unlimited</span>
+                        <span className="text-[13px] text-slate-500 mx-1">•</span>
+                        <div className="flex items-center gap-2">
+                            <Clock className="w-[11.67px] h-[11.67px] text-emerald-500" />
+                            <span className="text-[16px] text-slate-500">Untimed</span>
                         </div>
                     </div>
 
                     <Button
                         onClick={() => handleStart("flashcard")}
-                        className="w-full h-14 text-base font-bold bg-orange-500 hover:bg-orange-400 text-white rounded-xl tracking-wide shadow-lg shadow-orange-900/20"
+                        className="w-full h-14 text-[16px] font-bold font-['Liberation_Sans',sans-serif] bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl transition-all"
                     >
-                        START <ArrowRight className="ml-2 w-5 h-5" />
+                        START
                     </Button>
                 </div>
             </div>

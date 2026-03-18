@@ -3,7 +3,7 @@ import { GraduationCap } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center p-4 md:p-8 bg-[#050609] relative overflow-hidden">
+    <div className="flex min-h-screen flex-col items-center justify-center p-4 md:p-8 bg-white relative overflow-hidden font-['Inter',sans-serif]">
 
       {/* Background gradients or effects if needed matching the dark theme */}
 
@@ -13,11 +13,11 @@ export default function Home() {
 
 
         {/* Hero Section */}
-        <div className="text-center space-y-6 max-w-4xl mx-auto mt-4">
-          <h1 className="mb-8 text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-2">
+        <div className="text-center space-y-6 max-w-4xl mx-auto mt-12">
+          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900">
             Prepare for your AWS Certified AI Practitioner exam (AIF-C01)
           </h1>
-          <p className="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-slate-500 text-lg mx-auto mt-4 font-['Inter',sans-serif] leading-relaxed">
             Master artificial intelligence (AI), machine learning (ML), and generative AI concepts and use cases. Build confidence and boost your exam readiness with free practice sessions.
           </p>
         </div>
@@ -26,7 +26,7 @@ export default function Home() {
         <ModeSelection />
 
         {/* Footer Info Text */}
-        <div className="text-slate-500 max-w-4xl mx-auto mt-16 text-xs text-center leading-relaxed space-y-6">
+        <div className="text-slate-500 max-w-[848px] mx-auto mt-16 text-[12px] font-['Roboto',sans-serif] text-center leading-relaxed space-y-6">
           <p>
             The AWS Certified AI Practitioner Practice Exams (AIF-C01) is one of the newest certifications of Amazon Web Services.
           </p>

@@ -163,7 +163,7 @@ export default function PracticeSession() {
     const questionIds = questions.map(q => q.id);
 
     return (
-        <div className="h-[calc(100vh-4rem)] overflow-hidden bg-[#050609] flex flex-col">
+        <div className="h-[calc(100vh-4rem)] overflow-hidden bg-slate-50 flex flex-col">
             {/* Removed SessionHeader as it is now empty for both modes */}
 
             <div className="flex flex-1 overflow-hidden h-full relative">
@@ -183,11 +183,11 @@ export default function PracticeSession() {
                                 {mode === "flashcard" && (
                                     <div className="mb-6 space-y-4">
                                         {/* Progress Bar */}
-                                        <div className="w-full h-1 bg-[#15171e] rounded-full overflow-hidden flex gap-0.5">
+                                        <div className="w-full h-1 bg-slate-200 rounded-full overflow-hidden flex gap-0.5">
                                             {questions.map((q, idx) => {
                                                 const isCurrent = idx === currentIndex;
                                                 const ans = answers[q.id];
-                                                let colorClass = "bg-[#2a2d36]";
+                                                let colorClass = "bg-white";
 
                                                 if (ans) {
                                                     let isCorrect = false;
@@ -239,11 +239,11 @@ export default function PracticeSession() {
 
                             {/* Explanation Block - Outside Card */}
                             {((feedbackMode === "immediate" && showFeedbackForCurrent) || (feedbackMode === "end" && isFinished)) && (
-                                <div className="p-6 bg-[#0f1117] rounded-xl border border-blue-900/20 animate-in fade-in slide-in-from-bottom-2 shadow-lg">
-                                    <h4 className="font-bold mb-3 flex items-center gap-2 text-slate-400 text-[10px] uppercase tracking-widest">
+                                <div className="p-6 bg-slate-50 rounded-xl border border-slate-200 animate-in fade-in slide-in-from-bottom-2">
+                                    <h4 className="font-bold mb-3 flex items-center gap-2 text-slate-700 text-[10px] uppercase tracking-widest">
                                         <span className="text-sm">💡</span> EXPLANATION
                                     </h4>
-                                    <p className="text-slate-300 leading-relaxed text-sm">
+                                    <p className="text-slate-900 font-['Roboto',sans-serif] leading-relaxed text-[15px]">
                                         {currentQuestion.explanation.split(/Reference:/i)[0].trim()}
                                     </p>
                                 </div>
@@ -252,7 +252,7 @@ export default function PracticeSession() {
                     </main>
 
                     {/* Pinned Navigation Footer */}
-                    <div className="border-t border-white/5 bg-[#050609] px-4 py-3 md:px-8 md:py-4">
+                    <div className="border-t border-slate-200 bg-white shadow-[0_-4px_20px_rgba(0,0,0,0.02)] px-4 py-3 md:px-8 md:py-4">
                         <div className={cn(
                             "mx-auto flex items-center justify-between",
                             "max-w-4xl"
@@ -260,7 +260,7 @@ export default function PracticeSession() {
                             <div className="flex gap-4">
                                 <Button
                                     variant="outline"
-                                    className="border-white/10 text-white hover:bg-white/5 hover:text-white h-12 px-6 rounded-md text-xs font-bold tracking-wider"
+                                    className="border-slate-200 text-slate-700 hover:bg-slate-50 bg-white h-12 px-6 rounded-md text-xs font-bold tracking-wider"
                                     onClick={handlePrevious}
                                     disabled={currentIndex === 0}
                                 >
@@ -272,11 +272,11 @@ export default function PracticeSession() {
                             </div>
 
                             {feedbackMode === "immediate" && !showFeedbackForCurrent && !answers[currentQuestion.id] ? (
-                                <Button disabled className="bg-blue-600/50 text-white/50 px-8 h-12 rounded-md min-w-[140px] font-bold text-xs tracking-wider shadow-none cursor-not-allowed">
+                                <Button disabled className="bg-slate-200 text-slate-400 px-8 h-12 rounded-md min-w-[140px] font-bold text-xs tracking-wider shadow-none cursor-not-allowed">
                                     NEXT &gt;
                                 </Button>
                             ) : feedbackMode === "immediate" && !showFeedbackForCurrent && currentQuestion.multiSelect ? (
-                                <Button onClick={() => setShowFeedbackForCurrent(true)} className="bg-blue-600 hover:bg-blue-500 text-white px-8 h-12 rounded-md font-bold shadow-lg shadow-blue-500/20 text-xs tracking-wider">
+                                <Button onClick={() => setShowFeedbackForCurrent(true)} className="bg-emerald-600 hover:bg-emerald-500 text-white px-8 h-12 rounded-md font-bold shadow-sm shadow-emerald-600/20 text-xs tracking-wider">
                                     CHECK ANSWER
                                 </Button>
                             ) : (
@@ -284,10 +284,10 @@ export default function PracticeSession() {
                                     onClick={handleNext}
                                     disabled={mode === "mock" && isLastQuestion}
                                     className={cn(
-                                        "px-8 h-12 rounded-md min-w-[140px] font-bold text-xs tracking-wider transition-all duration-200 shadow-lg",
+                                        "px-8 h-12 rounded-md min-w-[140px] font-bold text-xs tracking-wider transition-all duration-200 shadow-sm",
                                         mode === "mock" && isLastQuestion
-                                            ? "bg-blue-600/50 text-white/50 shadow-none cursor-not-allowed"
-                                            : "bg-blue-600 hover:bg-blue-500 text-white shadow-blue-600/20"
+                                            ? "bg-slate-200 text-slate-400 shadow-none cursor-not-allowed"
+                                            : "bg-emerald-600 hover:bg-emerald-500 text-white shadow-emerald-600/20"
                                     )}
                                 >
                                     {isLastQuestion && mode !== "mock" ? "FINISH TEST" : "NEXT >"}

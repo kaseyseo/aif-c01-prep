@@ -9,13 +9,13 @@ import { CheckCircle, XCircle, Bookmark } from "lucide-react";
 function StatusBadge({ correct }: { correct: boolean }) {
     if (correct) {
         return (
-            <div className="flex items-center gap-1 text-green-600 bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded-full text-xs font-semibold">
+            <div className="flex items-center gap-1 text-emerald-700 bg-emerald-50 px-2 py-1 rounded-full text-xs font-semibold">
                 <CheckCircle className="w-4 h-4" /> Correct
             </div>
         );
     }
     return (
-        <div className="flex items-center gap-1 text-red-600 bg-red-100 dark:bg-red-900/30 px-2 py-1 rounded-full text-xs font-semibold">
+        <div className="flex items-center gap-1 text-red-700 bg-red-50 px-2 py-1 rounded-full text-xs font-semibold">
             <XCircle className="w-4 h-4" /> Incorrect
         </div>
     );
@@ -60,7 +60,7 @@ export function QuestionCard({
                 {/* Header Row: Count Badge and Bookmark */}
                 <div className="flex justify-between items-start mb-4">
                     {typeof currentIndex === 'number' && typeof totalQuestions === 'number' && (
-                        <div className="px-3 py-1 bg-[#23252b] text-slate-300 text-xs font-bold rounded-full border border-white/10">
+                        <div className="px-3 py-1 bg-white shadow-sm text-slate-500 text-xs font-bold rounded-full border border-slate-200">
                             {currentIndex + 1} / {totalQuestions}
                         </div>
                     )}
@@ -73,7 +73,7 @@ export function QuestionCard({
                             }}
                             className={cn(
                                 "transition-colors",
-                                isBookmarked ? "text-amber-500 fill-amber-500" : "text-slate-500 hover:text-amber-500"
+                                isBookmarked ? "text-amber-500 fill-amber-500" : "text-slate-400 hover:text-amber-500"
                             )}
                         >
                             <Bookmark className={cn("w-5 h-5", isBookmarked && "fill-current")} />
@@ -81,7 +81,7 @@ export function QuestionCard({
                     )}
                 </div>
 
-                <CardTitle className="text-lg md:text-xl leading-normal text-white font-medium">
+                <CardTitle className="text-[22px] tracking-tight text-slate-900 font-bold leading-normal">
                     {question.text}
                 </CardTitle>
             </CardHeader>
@@ -109,32 +109,32 @@ export function QuestionCard({
                         if (showFeedback) {
                             if (isTargetCorrect) {
                                 // Correct Answer (Whether selected or not)
-                                containerClass += " border-emerald-500/50 bg-emerald-500/5";
-                                textClass += " text-emerald-400";
+                                containerClass += " border-emerald-500 bg-emerald-50";
+                                textClass += " text-emerald-800";
                                 radioOuterClass += " border-emerald-500";
                                 // If selected, fill it. If distinct correct answer that wasn't selected, it's empty but green.
 
                             } else if (isSelected) {
                                 // Selected WRONG answer
-                                containerClass += " border-red-500/50 bg-red-500/5";
-                                textClass += " text-red-400";
+                                containerClass += " border-red-500 bg-red-50";
+                                textClass += " text-red-800";
                                 radioOuterClass += " border-red-500";
                             } else {
                                 // Unselected and Wrong
-                                containerClass += " border-white/5 opacity-50";
-                                textClass += " text-slate-400";
-                                radioOuterClass += " border-white/20";
+                                containerClass += " border-slate-200 bg-white opacity-50";
+                                textClass += " text-slate-500";
+                                radioOuterClass += " border-slate-300";
                             }
                         } else {
                             // Normal Interaction
                             if (isSelected) {
-                                containerClass += " border-blue-600 bg-blue-600/10 shadow-[0_0_20px_rgba(37,99,235,0.1)]";
-                                textClass += " text-white";
-                                radioOuterClass += " border-blue-500";
+                                containerClass += " border-emerald-500 bg-emerald-50 shadow-[0_0_20px_rgba(16,185,129,0.1)]";
+                                textClass += " text-emerald-900";
+                                radioOuterClass += " border-emerald-500";
                             } else {
-                                containerClass += " border-white/10 hover:border-white/20 hover:bg-white/[0.02]";
-                                textClass += " text-slate-300";
-                                radioOuterClass += " border-white/20 group-hover:border-white/40";
+                                containerClass += " border-slate-200 hover:border-emerald-300 hover:bg-emerald-50/50";
+                                textClass += " text-slate-700";
+                                radioOuterClass += " border-slate-300 group-hover:border-emerald-400";
                             }
                         }
 
@@ -152,7 +152,7 @@ export function QuestionCard({
                                                 radioInnerClass,
                                                 showFeedback && isTargetCorrect ? "bg-emerald-500" :
                                                     showFeedback && !isTargetCorrect ? "bg-red-500" :
-                                                        "bg-blue-500"
+                                                        "bg-emerald-500"
                                             )} />
                                         )}
                                     </div>
