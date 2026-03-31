@@ -35,19 +35,19 @@ export function Header() {
                 <div className="flex items-center justify-between h-16">
                     {/* Logo / Title */}
                     <Link href="/" className="flex-shrink-0 flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-lg bg-indigo-500 flex items-center justify-center">
                             <GraduationCap className="w-5 h-5 text-white" />
                         </div>
-                        <span className="text-slate-900 font-bold text-[18px] tracking-wide font-['Liberation_Sans',sans-serif] hidden sm:block">
+                        <span className="text-slate-900 font-bold text-[18px] tracking-wide hidden sm:block">
                             AIF C01 PREP
                         </span>
-                        <span className="text-slate-900 font-bold text-[18px] tracking-wide font-['Liberation_Sans',sans-serif] sm:hidden">
+                        <span className="text-slate-900 font-bold text-[18px] tracking-wide sm:hidden">
                             AIF C01 PREP
                         </span>
                     </Link>
 
                     {/* Navigation */}
-                    <nav className="flex items-center gap-1 sm:gap-4 font-['Inter',sans-serif]">
+                    <nav className="flex items-center gap-1 sm:gap-4">
                         {links.map((link) => {
                             if (link.dropdown) {
                                 const basePath = link.dropdown[0].href.split('/')[1];

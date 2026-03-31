@@ -128,13 +128,13 @@ export function QuestionCard({
                         } else {
                             // Normal Interaction
                             if (isSelected) {
-                                containerClass += " border-emerald-500 bg-emerald-50 shadow-[0_0_20px_rgba(16,185,129,0.1)]";
-                                textClass += " text-emerald-900";
-                                radioOuterClass += " border-emerald-500";
+                                containerClass += " border-indigo-500 bg-indigo-50 shadow-[0_0_20px_rgba(99,102,241,0.1)]";
+                                textClass += " text-indigo-900";
+                                radioOuterClass += " border-indigo-500";
                             } else {
-                                containerClass += " border-slate-200 hover:border-emerald-300 hover:bg-emerald-50/50";
+                                containerClass += " border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/50";
                                 textClass += " text-slate-700";
-                                radioOuterClass += " border-slate-300 group-hover:border-emerald-400";
+                                radioOuterClass += " border-slate-300 group-hover:border-indigo-400";
                             }
                         }
 
@@ -152,7 +152,7 @@ export function QuestionCard({
                                                 radioInnerClass,
                                                 showFeedback && isTargetCorrect ? "bg-emerald-500" :
                                                     showFeedback && !isTargetCorrect ? "bg-red-500" :
-                                                        "bg-emerald-500"
+                                                        "bg-indigo-500"
                                             )} />
                                         )}
                                     </div>

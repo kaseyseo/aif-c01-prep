@@ -243,7 +243,7 @@ export default function PracticeSession() {
                                     <h4 className="font-bold mb-3 flex items-center gap-2 text-slate-700 text-[10px] uppercase tracking-widest">
                                         <span className="text-sm">💡</span> EXPLANATION
                                     </h4>
-                                    <p className="text-slate-900 font-['Roboto',sans-serif] leading-relaxed text-[15px]">
+                                    <p className="text-slate-900 leading-relaxed text-[15px]">
                                         {currentQuestion.explanation.split(/Reference:/i)[0].trim()}
                                     </p>
                                 </div>
@@ -276,7 +276,7 @@ export default function PracticeSession() {
                                     NEXT &gt;
                                 </Button>
                             ) : feedbackMode === "immediate" && !showFeedbackForCurrent && currentQuestion.multiSelect ? (
-                                <Button onClick={() => setShowFeedbackForCurrent(true)} className="bg-emerald-600 hover:bg-emerald-500 text-white px-8 h-12 rounded-md font-bold shadow-sm shadow-emerald-600/20 text-xs tracking-wider">
+                                <Button onClick={() => setShowFeedbackForCurrent(true)} className="bg-indigo-600 hover:bg-indigo-500 text-white px-8 h-12 rounded-md font-bold shadow-sm shadow-indigo-600/20 text-xs tracking-wider">
                                     CHECK ANSWER
                                 </Button>
                             ) : (
@@ -287,7 +287,7 @@ export default function PracticeSession() {
                                         "px-8 h-12 rounded-md min-w-[140px] font-bold text-xs tracking-wider transition-all duration-200 shadow-sm",
                                         mode === "mock" && isLastQuestion
                                             ? "bg-slate-200 text-slate-400 shadow-none cursor-not-allowed"
-                                            : "bg-emerald-600 hover:bg-emerald-500 text-white shadow-emerald-600/20"
+                                            : "bg-indigo-600 hover:bg-indigo-500 text-white shadow-indigo-600/20"
                                     )}
                                 >
                                     {isLastQuestion && mode !== "mock" ? "FINISH TEST" : "NEXT >"}

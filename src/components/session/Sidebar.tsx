@@ -69,7 +69,7 @@ export function Sidebar({ totalQuestions, currentIndex, answers, bookmarked, que
                     {/* Linear Progress Bar */}
                     <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
                         <div
-                            className="h-full bg-emerald-500 transition-all duration-1000 ease-linear rounded-full"
+                            className="h-full bg-indigo-500 transition-all duration-1000 ease-linear rounded-full"
                             style={{ width: `${Math.min(100, Math.max(0, 100 - progress))}%` }} // Decreasing
                         />
                     </div>
@@ -107,25 +107,25 @@ export function Sidebar({ totalQuestions, currentIndex, answers, bookmarked, que
                                     onClick={() => onNavigate(idx)}
                                     className={cn(
                                         "flex items-center justify-between px-6 py-4 border-b border-slate-100 hover:bg-slate-50 transition-colors text-left",
-                                        isCurrent && "bg-emerald-50 border-l-2 border-l-emerald-500" // Highlight current
+                                        isCurrent && "bg-indigo-50 border-l-2 border-l-indigo-500" // Highlight current
                                     )}
                                 >
                                     <div className="flex items-center gap-4">
                                         {/* Status Icon */}
                                         <div className="shrink-0">
                                             {isAnswered ? (
-                                                <div className="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center" />
+                                                <div className="w-5 h-5 rounded-full bg-indigo-500 text-white flex items-center justify-center" />
                                             ) : (
                                                 <div className={cn(
                                                     "w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors",
-                                                    isCurrent ? "border-emerald-500" : "border-slate-300"
+                                                    isCurrent ? "border-indigo-500" : "border-slate-300"
                                                 )} />
                                             )}
                                         </div>
 
                                         <span className={cn(
                                             "text-sm font-medium transition-colors",
-                                            isCurrent ? "text-emerald-900 font-bold" : "text-slate-500"
+                                            isCurrent ? "text-indigo-900 font-bold" : "text-slate-500"
                                         )}>
                                             Question {idx + 1}
                                         </span>
@@ -148,7 +148,7 @@ export function Sidebar({ totalQuestions, currentIndex, answers, bookmarked, que
                     <Button
                         onClick={handleFinishClick}
                         variant="outline"
-                        className="w-full border border-emerald-200 bg-emerald-50 text-emerald-600 hover:bg-emerald-600 hover:text-white font-bold h-12 rounded-lg transition-all shadow-sm"
+                        className="w-full border border-indigo-200 bg-indigo-50 text-indigo-600 hover:bg-indigo-600 hover:text-white font-bold h-12 rounded-lg transition-all shadow-sm"
                     >
                         SUBMIT TEST
                     </Button>
@@ -176,7 +176,7 @@ export function Sidebar({ totalQuestions, currentIndex, answers, bookmarked, que
                                     setShowConfirmModal(false);
                                     onFinish();
                                 }}
-                                className="bg-emerald-600 hover:bg-emerald-500 text-white"
+                                className="bg-indigo-600 hover:bg-indigo-500 text-white"
                             >
                                 Finish Exam
                             </Button>

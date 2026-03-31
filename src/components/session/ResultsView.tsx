@@ -79,7 +79,7 @@ export function ResultsView({ userAnswers, questions, onRestart, onHome, mode, b
                                 onClick={() => setFilter("all")}
                                 label="All Questions"
                                 icon={<List className="w-4 h-4" />}
-                                activeClass="bg-emerald-50 border-l-2 border-emerald-500 text-emerald-900"
+                                activeClass="bg-indigo-50 border-l-2 border-indigo-500 text-indigo-900"
                             />
                             <FilterButton
                                 active={filter === "correct"}
@@ -107,7 +107,7 @@ export function ResultsView({ userAnswers, questions, onRestart, onHome, mode, b
 
                 {/* Footer Buttons */}
                 <div className="p-6 space-y-3 bg-white border-t border-slate-200">
-                    <Button onClick={onHome} className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold h-12 rounded-xl">
+                    <Button onClick={onHome} className="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold h-12 rounded-xl">
                         <Home className="w-4 h-4 mr-2" /> Back to Home
                     </Button>
                     <Button onClick={onRestart} variant="outline" className="w-full text-slate-700 border-slate-200 hover:bg-slate-50 bg-white font-bold h-12 rounded-xl">
@@ -154,10 +154,10 @@ function FilterButton({ active, onClick, label, icon, activeClass }: { active: b
             onClick={onClick}
             className={cn(
                 "w-[calc(100%+1.5rem)] -mx-3 flex items-center gap-3 p-3 text-sm font-medium transition-all duration-200",
-                active ? (activeClass || "bg-emerald-50 border-l-2 border-emerald-500 text-emerald-900") : "text-slate-500 hover:bg-slate-50 hover:text-slate-700 border-l-2 border-transparent"
+                active ? (activeClass || "bg-indigo-50 border-l-2 border-indigo-500 text-indigo-900") : "text-slate-500 hover:bg-slate-50 hover:text-slate-700 border-l-2 border-transparent"
             )}
         >
-            <div className={cn("shrink-0", active ? "text-emerald-900" : "text-slate-500")}>
+            <div className={cn("shrink-0", active ? "text-indigo-900" : "text-slate-500")}>
                 {icon}
             </div>
             <span>{label}</span>
@@ -193,7 +193,7 @@ function ReviewQuestionCard({ question, userAnswer, index }: { question: Questio
                 </div>
 
                 <div className="p-6 space-y-6">
-                    <h3 className="text-base sm:text-lg font-bold tracking-tight text-slate-900 leading-relaxed font-['Inter',sans-serif]">
+                    <h3 className="text-base sm:text-lg font-bold tracking-tight text-slate-900 leading-relaxed">
                         {question.text}
                     </h3>
 
@@ -202,14 +202,14 @@ function ReviewQuestionCard({ question, userAnswer, index }: { question: Questio
                             const isSelected = Array.isArray(userAnswer) ? userAnswer.includes(option) : userAnswer === option;
                             const isActuallyCorrect = Array.isArray(question.correctAnswer) ? question.correctAnswer.includes(option) : question.correctAnswer === option;
 
-                            let stateClass = "border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-['Roboto',sans-serif]";
+                            let stateClass = "border-slate-200 bg-white hover:bg-slate-50 text-slate-700 ";
                             let icon = null;
 
                             if (isActuallyCorrect) {
-                                stateClass = "border-emerald-500 bg-emerald-50 text-emerald-900 font-bold shadow-[0_0_15px_-3px_rgba(16,185,129,0.1)] font-['Roboto',sans-serif]";
+                                stateClass = "border-emerald-500 bg-emerald-50 text-emerald-900 font-bold shadow-[0_0_15px_-3px_rgba(16,185,129,0.1)] ";
                                 icon = <Check className="w-5 h-5 text-emerald-600 shrink-0" />;
                             } else if (isSelected && !isActuallyCorrect) {
-                                stateClass = "border-red-500 bg-red-50 text-red-900 font-bold font-['Roboto',sans-serif]";
+                                stateClass = "border-red-500 bg-red-50 text-red-900 font-bold ";
                                 icon = <X className="w-5 h-5 text-red-600 shrink-0" />;
                             } else if (isSelected && isActuallyCorrect) {
                                 // Already handled by first if, strictly speaking, but logically 'selected correct' is same.
@@ -247,7 +247,7 @@ function ReviewQuestionCard({ question, userAnswer, index }: { question: Questio
                             <span className="text-sm">💡</span>
                             <span className="text-xs font-bold text-slate-700 uppercase tracking-widest">Explanation</span>
                         </div>
-                        <div className="p-4 text-[15px] font-['Roboto',sans-serif] text-slate-900 leading-relaxed">
+                        <div className="p-4 text-[15px]  text-slate-900 leading-relaxed">
                             {question.explanation.split(/Reference:/i)[0].trim()}
                         </div>
                     </div>

@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { SessionHistoryProvider } from "@/context/SessionHistoryContext";
 import { Header } from "@/components/layout/Header";
 import Script from "next/script";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
   title: "AWS AI Practitioner Prep",
@@ -34,7 +38,7 @@ export default function RootLayout({
       </head>
       <body className={cn(
         "min-h-screen bg-background font-sans antialiased",
-        inter.variable
+        plusJakartaSans.variable
       )}>
         <SessionHistoryProvider>
           <Header />

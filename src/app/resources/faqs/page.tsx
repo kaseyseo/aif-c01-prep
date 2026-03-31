@@ -50,7 +50,7 @@ const faqSections = [
                     <>
                         <p>The minimum passing score is 700 on a scale of 100 to 1,000. AWS uses a scaled scoring model — the exact number of correct answers required to achieve a score of 700 may vary slightly between exam versions, but a scaled score of 700 always represents a passing result.</p>
                         <p className="mt-4">There is no penalty for incorrect answers, so always answer every question — even if you are unsure. An unanswered question is scored the same as an incorrect one.</p>
-                        <div className="mt-6 p-5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800">
+                        <div className="mt-6 p-5 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-800">
                             <strong>Benchmark to aim for:</strong> Score consistently above 80% on practice exams before booking. This gives you a comfortable buffer above the actual threshold.
                         </div>
                     </>
@@ -84,7 +84,7 @@ const faqSections = [
                 question: "How do I register for the AIF-C01 exam?",
                 answer: (
                     <>
-                        <p>You register through your AWS Certification account at <a href="https://aws.amazon.com/certification" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-500 underline">aws.amazon.com/certification</a>. If you do not already have one, you will need to create a free account.</p>
+                        <p>You register through your AWS Certification account at <a href="https://aws.amazon.com/certification" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-500 underline">aws.amazon.com/certification</a>. If you do not already have one, you will need to create a free account.</p>
                         <p className="mt-4">From your account, you can search for the AWS Certified AI Practitioner exam and select a delivery method: in-person testing at a Pearson VUE testing centre, or an online proctored exam taken from your own location. Both require a valid government-issued photo ID.</p>
                         <p className="mt-4">For the online proctored exam, you will also need to ensure your testing environment meets Pearson VUE's requirements — including a quiet, private room, a working webcam, and a stable internet connection.</p>
                     </>
@@ -186,7 +186,7 @@ const faqSections = [
 
 export default function FAQsPage() {
     return (
-        <div className="min-h-screen bg-white pt-24 pb-24 font-['Inter',sans-serif]">
+        <div className="min-h-screen bg-white pt-24 pb-24">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
 
                 {/* Hero */}
@@ -194,7 +194,7 @@ export default function FAQsPage() {
                     <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900">
                         Frequently Asked Questions
                     </h1>
-                    <p className="text-slate-500 text-lg max-w-2xl mx-auto mt-4 font-['Inter',sans-serif] leading-relaxed">
+                    <p className="text-slate-500 text-lg max-w-2xl mx-auto mt-4 leading-relaxed">
                         Everything you want to know about the AWS Certified AI Practitioner exam — from registration to results.
                     </p>
                 </div>
@@ -208,7 +208,7 @@ export default function FAQsPage() {
                             <ul className="space-y-4 border-l border-slate-200">
                                 {faqSections.map((section, idx) => (
                                     <li key={idx} className="-ml-[1px]">
-                                        <a href={`#${section.id}`} className="block pl-4 border-l border-transparent hover:border-emerald-500 text-slate-500 hover:text-emerald-700 font-['Roboto',sans-serif] text-[16px] transition-colors">
+                                        <a href={`#${section.id}`} className="block pl-4 border-l border-transparent hover:border-indigo-500 text-slate-500 hover:text-indigo-700 text-[16px] transition-colors">
                                             {section.title}
                                         </a>
                                     </li>
@@ -227,9 +227,9 @@ export default function FAQsPage() {
                                         <details key={itemIdx} className="group bg-transparent border-none outline-none py-5 border-b border-slate-200 last:border-b-0">
                                             <summary className="flex justify-between items-start font-bold text-[18px] text-slate-900 cursor-pointer list-none select-none">
                                                 <span className="pr-6 leading-snug">{item.question}</span>
-                                                <span className="transition duration-300 group-open:rotate-45 group-open:text-emerald-500 block text-2xl leading-none text-slate-400 group-hover:text-emerald-500 shrink-0 mt-0.5">+</span>
+                                                <span className="transition duration-300 group-open:rotate-45 group-open:text-indigo-500 block text-2xl leading-none text-slate-400 group-hover:text-indigo-500 shrink-0 mt-0.5">+</span>
                                             </summary>
-                                            <div className="text-slate-500 mt-4 leading-relaxed text-[16px] font-['Roboto',sans-serif] pr-8">
+                                            <div className="text-slate-500 mt-4 leading-relaxed text-[16px] pr-8">
                                                 {item.answer}
                                             </div>
                                         </details>
@@ -242,10 +242,10 @@ export default function FAQsPage() {
                 </div>
 
                 {/* CTA */}
-                <div className="mt-20 max-w-4xl mx-auto bg-emerald-50 border border-emerald-200 rounded-3xl p-10 sm:p-14 text-center space-y-6 shadow-sm">
+                <div className="mt-20 max-w-4xl mx-auto bg-indigo-50 border border-indigo-200 rounded-3xl p-10 sm:p-14 text-center space-y-6 shadow-sm">
                     <h2 className="tracking-tight text-[30px] font-bold text-slate-900">Start Preparing Today</h2>
-                    <p className="text-slate-500 text-[18px] max-w-xl mx-auto font-['Inter',sans-serif]">Take a free AIF-C01 practice test and find out where you stand.</p>
-                    <Link href="/" className="inline-block mt-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 px-10 rounded-xl transition-colors shadow-sm shadow-emerald-600/20">
+                    <p className="text-slate-500 text-[18px] max-w-xl mx-auto">Take a free AIF-C01 practice test and find out where you stand.</p>
+                    <Link href="/" className="inline-block mt-4 bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 px-10 rounded-xl transition-colors shadow-sm shadow-indigo-600/20">
                         Start a Free Practice Test
                     </Link>
                 </div>

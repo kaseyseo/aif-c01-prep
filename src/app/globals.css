@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 @theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
@@ -34,48 +36,35 @@
 }
 
 :root {
-  /* Default to Dark Theme colors to match reference */
-  --background: 224 10% 4%;
-  /* #090a0c - Very dark background */
-  --foreground: 210 40% 98%;
+  --background: 0 0% 100%;
+  --foreground: 224 71% 4%;
 
-  --card: 224 10% 8%;
-  /* #121417 - Slightly lighter for cards */
-  --card-foreground: 210 40% 98%;
+  --card: 0 0% 100%;
+  --card-foreground: 224 71% 4%;
 
-  --popover: 224 10% 8%;
-  --popover-foreground: 210 40% 98%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 224 71% 4%;
 
-  --primary: 221.2 83.2% 53.3%;
-  /* Blue */
-  --primary-foreground: 210 40% 98%;
+  --primary: 239 84% 67%;           /* indigo-500 #6366F1 */
+  --primary-foreground: 0 0% 100%;
 
-  --secondary: 217.2 32.6% 17.5%;
-  --secondary-foreground: 210 40% 98%;
+  --secondary: 240 5% 96%;          /* zinc-100 */
+  --secondary-foreground: 240 6% 10%;
 
-  --muted: 217.2 32.6% 17.5%;
-  --muted-foreground: 215 20.2% 65.1%;
-  /* Muted text */
+  --muted: 240 5% 96%;
+  --muted-foreground: 240 4% 46%;   /* zinc-500 */
 
-  --accent: 217.2 32.6% 17.5%;
-  --accent-foreground: 210 40% 98%;
+  --accent: 239 100% 97%;           /* indigo-50 */
+  --accent-foreground: 239 84% 40%;
 
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 40% 98%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
 
-  --border: 217.2 32.6% 17.5%;
-  --input: 217.2 32.6% 17.5%;
-  --ring: 224.3 76.3% 48%;
+  --border: 240 6% 90%;             /* zinc-200 */
+  --input: 240 6% 90%;
+  --ring: 239 84% 67%;
 
-  --radius: 1rem;
-  /* More rounded corners */
-}
-
-/* Force dark mode */
-.dark {
-  --background: 224 10% 4%;
-  --foreground: 210 40% 98%;
-  /* ... same as root ... */
+  --radius: 0.75rem;
 }
 
 @layer base {

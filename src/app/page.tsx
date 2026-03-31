@@ -3,7 +3,7 @@ import { GraduationCap } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center p-4 md:p-8 bg-white relative overflow-hidden font-['Inter',sans-serif]">
+    <div className="flex min-h-screen flex-col items-center justify-center p-4 md:p-8 bg-white relative overflow-hidden">
 
       {/* Background gradients or effects if needed matching the dark theme */}
 
@@ -17,7 +17,7 @@ export default function Home() {
           <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900">
             Prepare for your AWS Certified AI Practitioner exam (AIF-C01)
           </h1>
-          <p className="text-slate-500 text-lg mx-auto mt-4 font-['Inter',sans-serif] leading-relaxed">
+          <p className="text-slate-500 text-lg mx-auto mt-4 leading-relaxed">
             Master artificial intelligence (AI), machine learning (ML), and generative AI concepts and use cases. Build confidence and boost your exam readiness with free practice sessions.
           </p>
         </div>
@@ -26,7 +26,7 @@ export default function Home() {
         <ModeSelection />
 
         {/* Footer Info Text */}
-        <div className="text-slate-500 max-w-[848px] mx-auto mt-16 text-[12px] font-['Roboto',sans-serif] text-center leading-relaxed space-y-6">
+        <div className="text-slate-500 max-w-[848px] mx-auto mt-16 text-[12px] text-center leading-relaxed space-y-6">
           <p>
             The AWS Certified AI Practitioner Practice Exams (AIF-C01) is one of the newest certifications of Amazon Web Services.
           </p>
