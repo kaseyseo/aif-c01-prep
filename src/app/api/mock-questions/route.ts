@@ -1,5 +1,7 @@
 import paidQuestionsData from "@/data/questions-paid.json";
 
+export const runtime = 'edge';
+
 export interface Question {
     id: string;
     text: string;
