@@ -10,7 +10,7 @@ import { QuestionCard } from "./QuestionCard";
 import { ResultsView } from "./ResultsView";
 import { SessionHeader } from "./SessionHeader";
 import { Sidebar } from "./Sidebar";
-import { getRandomQuestions, shuffleArray, type Question } from "@/helpers/question-engine";
+import { getRandomQuestions, shuffleArray, FREE_QUESTIONS, type Question } from "@/helpers/question-engine";
 import { useSessionHistory } from "@/context/SessionHistoryContext";
 
 export default function PracticeSession() {
@@ -37,18 +37,37 @@ export default function PracticeSession() {
     React.useEffect(() => {
         if (!isLoaded) return;
 
-        const count = mode === "mock" ? 65 : 10;
-        const qs = getRandomQuestions(count, seenQuestionIds);
+        const initializeSession = async () => {
+            try {
+                let qs: Question[];
 
-        // Shuffle options for each question so their order is randomized per session
-        const shuffledQs = qs.map(q => ({
-            ...q,
-            options: shuffleArray(q.options)
-        }));
-        setQuestions(shuffledQs);
-        setLoading(false);
-        const newIds = qs.map(q => q.id);
-        markQuestionsAsSeen(newIds);
+                if (mode === "mock") {
+                    // Fetch mock questions from the server-side function
+                    const response = await fetch("/api/mock-questions?count=65");
+                    if (!response.ok) throw new Error("Failed to fetch mock questions");
+                    qs = await response.json();
+                } else {
+                    // Flashcard mode: draw from the client-side free pool
+                    const count = 10;
+                    qs = getRandomQuestions(FREE_QUESTIONS, count, seenQuestionIds);
+                    // Shuffle options for each question
+                    qs = qs.map(q => ({
+                        ...q,
+                        options: shuffleArray(q.options)
+                    }));
+                    const newIds = qs.map(q => q.id);
+                    markQuestionsAsSeen(newIds);
+                }
+
+                setQuestions(qs);
+                setLoading(false);
+            } catch (error) {
+                console.error("Error initializing session:", error);
+                setLoading(false);
+            }
+        };
+
+        initializeSession();
     }, [mode, markQuestionsAsSeen, isLoaded]);
 
     // Derived State

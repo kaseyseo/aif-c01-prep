@@ -1,0 +1,444 @@
+[
+  {
+    "id": "q1",
+    "text": "What is the primary purpose of Amazon Bedrock?",
+    "options": [
+      "To provision EC2 instances for AI workloads",
+      "To build and scale generative AI applications with foundation models",
+      "To store vast amounts of unstructured data for analytics",
+      "To manage containerized applications using Kubernetes"
+    ],
+    "correctAnswer": "To build and scale generative AI applications with foundation models",
+    "explanation": "Amazon Bedrock is a fully managed service that makes foundation models (FMs) from leading AI startups and Amazon available via an API, so you can choose from a wide range of FMs to find the model that is best suited for your use case.",
+    "topic": "Generative AI",
+    "multiSelect": false
+  },
+  {
+    "id": "q2",
+    "text": "Which AWS service is designed for building, training, and deploying machine learning models?",
+    "options": [
+      "Amazon SageMaker",
+      "Amazon Comprehend",
+      "Amazon Rekognition",
+      "Amazon Polly"
+    ],
+    "correctAnswer": "Amazon SageMaker",
+    "explanation": "Amazon SageMaker is a fully managed service that provides every developer and data scientist with the ability to build, train, and deploy machine learning (ML) models quickly.",
+    "topic": "Machine Learning",
+    "multiSelect": false
+  },
+  {
+    "id": "q3",
+    "text": "What is the primary difference between AI and ML?",
+    "options": [
+      "AI is a subset of ML",
+      "ML is a subset of AI",
+      "AI and ML are unrelated fields",
+      "AI relies on explicit programming, while ML does not"
+    ],
+    "correctAnswer": "ML is a subset of AI",
+    "explanation": "Machine Learning (ML) is a subset of Artificial Intelligence (AI). AI creates systems that simulate human intelligence, while ML focuses on algorithms that learn from data.",
+    "topic": "Fundamentals",
+    "multiSelect": false
+  },
+  {
+    "id": "q4",
+    "text": "Which AWS service is best suited for natural language processing (NLP) tasks like sentiment analysis?",
+    "options": [
+      "Amazon Transcribe",
+      "Amazon Polly",
+      "Amazon Comprehend",
+      "Amazon Translate"
+    ],
+    "correctAnswer": "Amazon Comprehend",
+    "explanation": "Amazon Comprehend is a natural language processing (NLP) service that uses machine learning to find insights and relationships in text.",
+    "topic": "NLP",
+    "multiSelect": false
+  },
+  {
+    "id": "q5",
+    "text": "A company wants to identify improper content in images and videos. Which service should they use?",
+    "options": [
+      "Amazon Rekognition",
+      "Amazon Textract",
+      "Amazon Kendra",
+      "Amazon Macmillan"
+    ],
+    "correctAnswer": "Amazon Rekognition",
+    "explanation": "Amazon Rekognition allows you to add image and video analysis to your applications. It can identify objects, people, text, scenes, and activities, as well as detect inappropriate content.",
+    "topic": "Computer Vision",
+    "multiSelect": false
+  },
+  {
+    "id": "q7",
+    "text": "Which AWS service converts text into lifelike speech?",
+    "options": [
+      "Amazon Transcribe",
+      "Amazon Polly",
+      "Amazon Lex",
+      "Amazon Connect"
+    ],
+    "correctAnswer": "Amazon Polly",
+    "explanation": "Amazon Polly is a service that turns text into lifelike speech, allowing you to create applications that talk, and build entirely new categories of speech-enabled products.",
+    "topic": "Speech",
+    "multiSelect": false
+  },
+  {
+    "id": "q8",
+    "text": "What is a key principle of Responsible AI?",
+    "options": [
+      "Maximizing model size regardless of cost",
+      "Ensuring models are biased towards the majority",
+      "Fairness and preventing bias in AI systems",
+      "Ignoring explainability to increase speed"
+    ],
+    "correctAnswer": "Fairness and preventing bias in AI systems",
+    "explanation": "Responsible AI focuses on developing systems that are fair, explainable, safe, secure, and respectful of privacy. Fairness ensures that AI systems do not discriminate against any group of people.",
+    "topic": "Responsible AI",
+    "multiSelect": false
+  },
+  {
+    "id": "q15",
+    "text": "Which AWS service provides an enterprise search service powered by machine learning?",
+    "options": [
+      "Amazon OpenSearch",
+      "Amazon Kendra",
+      "Amazon Search",
+      "Amazon CloudSearch"
+    ],
+    "correctAnswer": "Amazon Kendra",
+    "explanation": "Amazon Kendra is an intelligent search service powered by machine learning, enabling organizations to provide relevant information to customers and employees when they need it.",
+    "topic": "Search",
+    "multiSelect": false
+  },
+  {
+    "id": "q29",
+    "text": "A business uses Amazon SageMaker to run its machine learning pipeline in a production environment. The company processes large datasets, sometimes reaching 1 GB in size, with processing times that can take up to an hour. To support its operations, the company requires low-latency predictions.\nWhich Amazon SageMaker inference option should the company choose?",
+    "options": [
+      "Real-time inference",
+      "Serverless inference",
+      "Asynchronous inference",
+      "Batch transform"
+    ],
+    "correctAnswer": "Real-time inference",
+    "explanation": "Real-time inference is designed for scenarios where low-latency responses are needed. It is ideal when predictions need to be generated immediately upon receiving input data, making it suitable for use cases requiring near real-time results, even with large datasets.\n\nServerless inference is incorrect because serverless inference is optimized for intermittent workloads that don\u2019t require low-latency predictions. While it\u2019s cost-effective for occasional requests, it doesn\u2019t meet the requirement for near real-time performance when processing large datasets.\nAsynchronous inference is incorrect because asynchronous inference is intended for situations where the input size is large or the processing time is lengthy, but real-time predictions are not required. It\u2019s useful when results can be delayed, but it doesn\u2019t support the company\u2019s need for near real-time latency.\nBatch transform is incorrect because batch transform is used for processing large datasets in batches without a focus on real-time results. It is better suited for use cases where predictions are processed in bulk and not required immediately after input.\n\nReference:\nDeploy models for inference",
+    "topic": "Machine Learning",
+    "multiSelect": false
+  },
+  {
+    "id": "q38",
+    "text": "A retail company wants to predict customer demand for seasonal products. The company lacks coding experience and knowledge of machine learning algorithms but needs to build a predictive model using internal sales data and external market data.\nWhich solution will meet these requirements?",
+    "options": [
+      "Import the data into Amazon SageMaker Studio. Build ML models and predict demand using built-in SageMaker algorithms.",
+      "Import the data into Amazon SageMaker Data Wrangler and build a demand forecasting model with SageMaker JumpStart.",
+      "Import the data into Amazon SageMaker Canvas. Build ML models and predict demand by selecting values in the data from SageMaker Canvas.",
+      "Use Amazon Lex to analyze the data and automatically generate predictions for product demand."
+    ],
+    "correctAnswer": "Import the data into Amazon SageMaker Canvas. Build ML models and predict demand by selecting values in the data from SageMaker Canvas.",
+    "explanation": "SageMaker Canvas allows users with no coding or machine learning experience to create models by simply interacting with the data via a point-and-click interface. This makes it the best choice for the retail company to generate demand forecasts without technical expertise.\n\nImport the data into Amazon SageMaker Studio. Build ML models and predict demand using built-in SageMaker algorithms is incorrect because using SageMaker Studio and its algorithms requires coding and machine learning knowledge, which the company does not have.\nImport the data into Amazon SageMaker Data Wrangler and build a demand forecasting model with SageMaker JumpStart is incorrect because, although SageMaker JumpStart simplifies access to pre-built models, using Data Wrangler and tuning these models still requires some machine learning understanding.\nUse Amazon Lex to analyze the data and automatically generate predictions for product demand is incorrect because Amazon Lex is designed for building conversational AI, like chatbots, and is not suitable for forecasting product demand.\n\nReference:\nAmazon SageMaker Canvas",
+    "topic": "Machine Learning",
+    "multiSelect": false
+  },
+  {
+    "id": "q46",
+    "text": "A video game development company is building an AI system that can generate responses based on player interactions. The AI needs to represent in-game objects and player actions numerically to understand their relationships and meanings.\nWhich term describes these numerical representations that AI models use to enhance their understanding of in-game interactions?",
+    "options": [
+      "Embeddings",
+      "Frames",
+      "Layers",
+      "Buffers"
+    ],
+    "correctAnswer": "Embeddings",
+    "explanation": "Embeddings are the numerical representations that AI systems use to capture the relationships between different objects, actions, or concepts. In this case, embeddings can help the AI understand the interactions between players and in-game objects by mapping them to a numerical space.\n\nFrames is incorrect because frames refer to visual or graphical content in games, not the numerical representation of objects or actions used by AI models.\nLayers is incorrect because layers refer to levels of computation in neural networks, not the representation of data itself.\nBuffers is incorrect because buffers are used to temporarily hold data in computing systems and are not related to how AI models understand relationships between objects and actions.\n\nReference:\nWhat is Natural Language Processing (NLP)?",
+    "topic": "Machine Learning",
+    "multiSelect": false
+  },
+  {
+    "id": "q55",
+    "text": "A healthcare organization has collected a large amount of medical data from patient records but the data is unstructured and lacks predefined labels. The organization wants to group similar patient records together to identify patterns in medical conditions and improve treatment strategies.\nWhich machine learning approach should the organization use to achieve this?",
+    "options": [
+      "Data augmentation",
+      "Supervised learning",
+      "Unsupervised learning",
+      "Feature engineering"
+    ],
+    "correctAnswer": "Unsupervised learning",
+    "explanation": "Unsupervised learning is the appropriate approach for analyzing unstructured or unlabeled data. In this case, it can help the organization identify patterns and group similar patient records based on shared characteristics without the need for labeled data.\n\nData augmentation is incorrect because data augmentation involves creating new, modified versions of the data to expand the dataset, not for grouping unstructured data.\nSupervised learning is incorrect because supervised learning requires labeled data, which the organization does not have.\nFeature engineering is incorrect because feature engineering involves creating new features from existing data, not grouping or clustering unstructured data.\n\nReference:\nWhat\u2019s the Difference Between Supervised and Unsupervised Learning?",
+    "topic": "Machine Learning",
+    "multiSelect": false
+  },
+  {
+    "id": "q63",
+    "text": "A company needs to securely access Amazon S3 from its machine learning application without exposing the data to the public internet.\nWhich AWS service should the company use?",
+    "options": [
+      "AWS Shield",
+      "Amazon GuardDuty",
+      "AWS PrivateLink",
+      "AWS WAF"
+    ],
+    "correctAnswer": "AWS PrivateLink",
+    "explanation": "AWS PrivateLink allows secure access to AWS services like Amazon S3 over a private network, ensuring data doesn\u2019t traverse the public internet.\n\nAWS Shield is incorrect because AWS Shield is for DDoS protection, not private access to AWS services.\nAmazon GuardDuty is incorrect because GuardDuty is for threat detection, not securing network traffic.\nAWS WAF is incorrect because AWS WAF is a web application firewall, not for securing private connections to AWS services.\n\nReference:\nAWS PrivateLink",
+    "topic": "Machine Learning",
+    "multiSelect": false
+  },
+  {
+    "id": "q72",
+    "text": "A fashion brand wants to use a pre-trained generative AI model to create content for its marketing campaigns. The company needs to ensure that the generated content reflects the brand\u2019s tone and messaging.\nWhich solution will meet these requirements?",
+    "options": [
+      "Optimize the model\u2019s architecture and hyperparameters to improve the model\u2019s accuracy.",
+      "Add more layers to the model to increase its ability to generate complex content.",
+      "Craft detailed prompts with clear instructions to ensure the generated content aligns with the brand\u2019s voice.",
+      "Pre-train a new generative model using a massive dataset tailored to the brand."
+    ],
+    "correctAnswer": "Craft detailed prompts with clear instructions to ensure the generated content aligns with the brand\u2019s voice.",
+    "explanation": "Creating detailed prompts is the most efficient way to control the output of a pre-trained generative AI model. By specifying the tone, style, and context in the prompts, the company can guide the model to generate content that aligns with its brand messaging without needing to modify the model itself.\n\nOptimize the model\u2019s architecture and hyperparameters to improve the model\u2019s accuracy is incorrect because optimizing the model\u2019s performance does not directly ensure the content will match the brand\u2019s tone. Clear prompts are a simpler and more effective way to control output.\nAdd more layers to the model to increase its ability to generate complex content is incorrect because adding layers increases the model\u2019s complexity but does not guarantee that the generated content will align with the brand\u2019s voice.\nPre-train a new generative model using a massive dataset tailored to the brand is incorrect because pre-training a new model is resource-intensive and unnecessary when clear prompts can easily guide the content generation to meet brand requirements.\n\nReference:\nPrompt Engineering Concepts",
+    "topic": "Machine Learning"
+  },
+  {
+    "id": "q80",
+    "text": "Which functionality is provided by Amazon SageMaker Clarify?",
+    "options": [
+      "Implements a Retrieval Augmented Generation (RAG) pipeline.",
+      "Tracks the performance of machine learning models in production.",
+      "Captures key metadata about machine learning models.",
+      "Detects possible bias during the data preparation phase."
+    ],
+    "correctAnswer": "Detects possible bias during the data preparation phase.",
+    "explanation": "Amazon SageMaker Clarify helps identify and mitigate bias in machine learning datasets and models, ensuring fairness during both data preparation and model training.\n\nImplements a Retrieval Augmented Generation (RAG) pipeline is incorrect because RAG is a method used to improve generative models by retrieving relevant information, and SageMaker Clarify does not handle RAG workflows.\nTracks the performance of machine learning models in production is incorrect because tracking model performance in production is handled by tools like SageMaker Model Monitor, not SageMaker Clarify.\nCaptures key metadata about machine learning models is incorrect because documenting metadata about models is a feature of SageMaker Model Cards, not SageMaker Clarify.\n\nReference:\nAmazon SageMaker Clarify",
+    "topic": "Machine Learning"
+  },
+  {
+    "id": "q89",
+    "text": "A company uses a machine learning model to analyze footage from a security camera for potential thefts. The company has found that the model disproportionately flags individuals from a particular ethnic group.\nWhich type of bias is affecting the model output?",
+    "options": [
+      "Measurement bias",
+      "Sampling bias",
+      "Cognitive bias",
+      "Algorithmic bias"
+    ],
+    "correctAnswer": "Sampling bias",
+    "explanation": "Sampling bias occurs when the data used to train the model is not representative of the entire population, leading to biased predictions. In this case, the model might have been trained on data that over-represents or under-represents certain ethnic groups, resulting in disproportionate flagging of individuals from that group.\n\nMeasurement bias is incorrect because measurement bias occurs when data is inaccurately measured or recorded, not when specific groups are disproportionately flagged.\nCognitive bias is incorrect because cognitive bias refers to the biases in human decision-making, not the biases that occur in training data for machine learning models.\nAlgorithmic bias is incorrect because while algorithmic bias can happen, the issue here is rooted in the data sampling process rather than the algorithm itself.\n\nReference:\nTransform Responsible AI from Theory into Practice",
+    "topic": "Machine Learning"
+  },
+  {
+    "id": "q97",
+    "text": "A company is using prompt engineering to generate responses from a large language model (LLM). However, they are concerned that attackers might manipulate the prompts to make the model generate inappropriate or harmful content.\nWhich risk of prompt engineering is the company trying to mitigate?",
+    "options": [
+      "Jailbreaking",
+      "Poisoning",
+      "Model hijacking",
+      "Data exposure"
+    ],
+    "correctAnswer": "Jailbreaking",
+    "explanation": "Jailbreaking occurs when attackers or users manipulate prompts to bypass restrictions, causing the model to generate inappropriate or harmful content that it is not supposed to produce.\n\nPoisoning is incorrect because poisoning refers to maliciously altering the training data to negatively affect model behavior, not prompt manipulation.\nModel hijacking is incorrect because model hijacking refers to an attacker taking control of the model\u2019s behavior, not manipulating prompts to bypass restrictions.\nData exposure is incorrect because data exposure refers to the unintended leakage of sensitive information, not the manipulation of model prompts.\n\nReference:\nSecure RAG Applications Using Prompt Engineering on Amazon Bedrock",
+    "topic": "Machine Learning"
+  },
+  {
+    "id": "q106",
+    "text": "A media company is using a large language model (LLM) on Amazon Bedrock to summarize movie reviews. The company wants the model to generate concise summaries that capture the overall sentiment of the review. Which prompt engineering strategy should the company use?",
+    "options": [
+      "Provide detailed instructions on how LLMs generate summaries and sentiment analysis.",
+      "Include a few examples of movie reviews with their corresponding summaries before providing the new review to summarize.",
+      "Provide the new review without any context or examples and ask the model to summarize it.",
+      "Include instructions for other tasks, such as generating a product description or categorizing the review, along with the summarization task."
+    ],
+    "correctAnswer": "Include a few examples of movie reviews with their corresponding summaries before providing the new review to summarize.",
+    "explanation": "Providing a few examples of reviews with their corresponding summaries helps guide the model by showing it how to perform the task. This is known as few-shot learning and helps the LLM generate more accurate summaries based on the patterns in the provided examples.",
+    "topic": "Machine Learning"
+  },
+  {
+    "id": "q114",
+    "text": "Which option is a use case for generative AI models?",
+    "options": [
+      "Improving network security by using intrusion detection systems.",
+      "Creating photorealistic images from text descriptions for digital marketing.",
+      "Enhancing database performance by using optimized indexing.",
+      "Analyzing financial data to forecast stock market trends."
+    ],
+    "correctAnswer": "Creating photorealistic images from text descriptions for digital marketing.",
+    "explanation": "Generative AI models excel at creating new content, such as images, text, or audio. One of the primary applications of these models is generating visual content from text prompts, which is highly valuable in fields like digital marketing for producing creative, unique visuals.\n\nImproving network security by using intrusion detection systems is incorrect because intrusion detection systems rely on monitoring patterns and anomalies, which is more suited for traditional machine learning models, not generative AI. Generative AI is typically not used for security applications like detecting network intrusions.\nEnhancing database performance by using optimized indexing is incorrect because improving database performance involves algorithms and techniques focused on query optimization and indexing, which are not tasks suited for generative AI models. Generative AI is used for creating new data, not for database optimization.\nAnalyzing financial data to forecast stock market trends is incorrect because predicting stock market trends typically involves statistical models or machine learning algorithms that analyze historical data patterns. Generative AI models are not designed for this kind of data forecasting, but for creating new content like images, text, or even audio.\n\nReference:\nTransform your business with generative AI",
+    "topic": "Machine Learning"
+  },
+  {
+    "id": "q124",
+    "text": "A security company is using Amazon Bedrock to run foundation models (FMs). The company wants to ensure that only authorized users can invoke the models and needs to detect any unauthorized access attempts to refine AWS Identity and Access Management (IAM) policies.\nWhich AWS service should the company use to identify unauthorized users trying to access Amazon Bedrock?",
+    "options": [
+      "AWS Shield",
+      "AWS CloudTrail",
+      "Amazon Macie",
+      "Amazon Inspector"
+    ],
+    "correctAnswer": "AWS CloudTrail",
+    "explanation": "AWS CloudTrail records all API calls and actions across AWS services, including attempts to invoke Amazon Bedrock models. By reviewing these logs, the company can identify unauthorized access attempts and set appropriate IAM policies for future model use.\n\nAWS Shield is incorrect because AWS Shield provides protection against distributed denial of service (DDoS) attacks, not for identifying unauthorized access attempts within AWS services.\nAmazon Macie is incorrect because Macie is designed to detect sensitive data in Amazon S3, not for monitoring access attempts to AWS services.\nAmazon Inspector is incorrect because Amazon Inspector is used to assess security vulnerabilities in EC2 instances, not to track or identify unauthorized users attempting to access AWS services.\n\nReference:\nAWS CloudTrail",
+    "topic": "Machine Learning"
+  },
+  {
+    "id": "q130",
+    "text": "Which of the following AWS services are suitable for storing and querying vector embeddings? (Select all that apply.)",
+    "options": [
+      "Amazon Neptune",
+      "Amazon Athena",
+      "Amazon Aurora",
+      "Amazon OpenSearch Service",
+      "AWS Lambda",
+      "Amazon DynamoDB"
+    ],
+    "correctAnswer": [
+      "Amazon Neptune",
+      "Amazon Aurora",
+      "Amazon OpenSearch Service"
+    ],
+    "explanation": "\"Amazon OpenSearch Service\", \"Amazon Neptune\", and \"Amazon Aurora\" are correct. OpenSearch Service, Neptune, and Aurora all support vector operations and can store and query vector embeddings.\n\n\"Amazon DynamoDB\" is incorrect. DynamoDB is a key-value database and does not have built-in support for vector operations. \"AWS Lambda\" is incorrect. Lambda is a serverless compute service and is not suitable for storing and querying vector embeddings. \"Amazon Athena\" is incorrect. Athena is a query service for data stored in S3 and does not have built-in support for vector operations.",
+    "topic": "Generative AI",
+    "multiSelect": true
+  },
+  {
+    "id": "q147",
+    "text": "What characterizes zero-shot learning in prompt engineering?",
+    "options": [
+      "Using multiple examples in the prompt",
+      "Physical server requirements",
+      "Requiring no examples in the prompt",
+      "Team size specifications"
+    ],
+    "correctAnswer": "Requiring no examples in the prompt",
+    "explanation": "\"Requiring no examples in the prompt\" is correct. Zero-shot learning requires no examples in the prompt.\n\n\"Using multiple examples in the prompt\" is incorrect. Using examples describes few-shot learning. \"Physical server requirements\" is incorrect. Physical servers aren't relevant. \"Team size specifications\" is incorrect. Team size isn't related to zero-shot learning.",
+    "topic": "Generative AI",
+    "multiSelect": false
+  },
+  {
+    "id": "q152",
+    "text": "Which type of machine learning would be most appropriate for identifying fraudulent credit card transactions when you have a dataset of labeled historical transactions?",
+    "options": [
+      "Supervised learning",
+      "Reinforcement learning",
+      "Semi-supervised learning",
+      "Unsupervised learning"
+    ],
+    "correctAnswer": "Supervised learning",
+    "explanation": "\"Supervised learning\" is correct. Supervised learning is most appropriate when you have labeled historical data to train the model.\n\n\"Unsupervised learning\" is incorrect. Unsupervised learning is used when you don't have labeled data. \"Reinforcement learning\" is incorrect. Reinforcement learning is used for learning through interaction with an environment. \"Semi-supervised learning\" is incorrect. Semi-supervised learning is used when you have a small amount of labeled data and large amount of unlabeled data.",
+    "topic": "Machine Learning",
+    "multiSelect": false
+  },
+  {
+    "id": "q159",
+    "text": "Which tools are effective for detecting bias in AI systems? (Select all that apply.)",
+    "options": [
+      "Amazon Rekognition Image Labeling",
+      "Automated monitoring tools",
+      "Human audits",
+      "Amazon SageMaker Clarify",
+      "Amazon CloudWatch Dashboards",
+      "AWS CloudFormation templates"
+    ],
+    "correctAnswer": [
+      "Automated monitoring tools",
+      "Human audits",
+      "Amazon SageMaker Clarify"
+    ],
+    "explanation": "\"Amazon SageMaker Clarify\", \"Automated monitoring tools\", and \"Human audits\" are correct. Amazon SageMaker Clarify helps detect bias in machine learning models by providing tools to identify and measure bias during data preparation, after model training, and in deployed models. Automated monitoring tools can continuously track model performance and detect potential bias that emerges over time. Human audits are important for bias detection as they provide qualitative assessment and can identify contextual biases that automated tools might miss.\n\"AWS CloudFormation templates\" is incorrect. AWS CloudFormation templates are infrastructure-as-code tools for deploying AWS resources, not for detecting bias in AI systems. \"Amazon Rekognition Image Labeling\" is incorrect. Amazon Rekognition Image Labeling is used for image analysis and object detection, not specifically for bias detection in AI systems. \"Amazon CloudWatch Dashboards\" is incorrect. Amazon CloudWatch Dashboards are used for monitoring AWS resources and applications, not specifically designed for AI bias detection.",
+    "topic": "Generative AI",
+    "multiSelect": true
+  },
+  {
+    "id": "q168",
+    "text": "What is a key consideration for meeting business objectives with generative AI? (Select all that apply.)",
+    "options": [
+      "Employee entertainment",
+      "Development team hobbies",
+      "Office location",
+      "Alignment with business goals",
+      "Server brand preference",
+      "Measurable performance metrics"
+    ],
+    "correctAnswer": [
+      "Alignment with business goals",
+      "Measurable performance metrics"
+    ],
+    "explanation": "\"Alignment with business goals\" and \"Measurable performance metrics\" are correct. Alignment with business goals is crucial. Measurable metrics are needed to track success.\n\"Office location\" is incorrect. Office location isn't relevant. \"Employee entertainment\" is incorrect. Employee entertainment isn't a key consideration. \"Development team hobbies\" is incorrect. Team hobbies don't affect business objectives. \"Server brand preference\" is incorrect. Server brand preference isn't relevant.",
+    "topic": "Generative AI",
+    "multiSelect": true
+  },
+  {
+    "id": "q176",
+    "text": "When is AI/ML typically NOT the most appropriate solution? (Select all that apply.)",
+    "options": [
+      "Tasks requiring creative problem-solving",
+      "Simple data sorting and filtering tasks",
+      "Basic mathematical calculations",
+      "Processing natural language queries",
+      "Straightforward rule-based decisions",
+      "Complex pattern recognition in large datasets"
+    ],
+    "correctAnswer": [
+      "Simple data sorting and filtering tasks",
+      "Basic mathematical calculations",
+      "Straightforward rule-based decisions"
+    ],
+    "explanation": "\"Simple data sorting and filtering tasks\", \"Basic mathematical calculations\", and \"Straightforward rule-based decisions\" are correct. Simple sorting and filtering can be done with traditional programming. Basic math doesn't require AI/ML. Simple rule-based decisions don't need AI/ML.\n\"Complex pattern recognition in large datasets\" is incorrect. Complex pattern recognition is well-suited for ML. \"Tasks requiring creative problem-solving\" is incorrect. Creative problem-solving can benefit from AI/ML. \"Processing natural language queries\" is incorrect. Natural language processing is a key AI/ML application.",
+    "topic": "Generative AI",
+    "multiSelect": true
+  },
+  {
+    "id": "q185",
+    "text": "Which statement best describes generative AI's impact on cross-domain performance?",
+    "options": [
+      "It can transfer knowledge across different domains with appropriate adaptation.",
+      "It only works within a single domain.",
+      "It requires complete retraining for each domain.",
+      "It guarantees perfect performance in all domains."
+    ],
+    "correctAnswer": "It can transfer knowledge across different domains with appropriate adaptation.",
+    "explanation": "\"It can transfer knowledge across different domains with appropriate adaptation\" is correct. Generative AI can transfer knowledge across domains with proper adaptation.\n\"It guarantees perfect performance in all domains\" is incorrect. Perfect performance is never guaranteed. \"It requires complete retraining for each domain\" is incorrect. Complete retraining isn't always necessary. \"It only works within a single domain\" is incorrect. Generative AI can work across multiple domains.",
+    "topic": "Generative AI",
+    "multiSelect": false
+  },
+  {
+    "id": "q194",
+    "text": "When implementing compliance reporting for AI systems, which elements are crucial? (Select all that apply.)",
+    "options": [
+      "Customer acquisition rates",
+      "Detailed model documentation",
+      "Bias and fairness assessments",
+      "Marketing performance",
+      "Operational costs",
+      "Performance metrics"
+    ],
+    "correctAnswer": [
+      "Detailed model documentation",
+      "Bias and fairness assessments",
+      "Performance metrics"
+    ],
+    "explanation": "\"Detailed model documentation\", \"Performance metrics\", and \"Bias and fairness assessments\" are correct. Detailed model documentation is essential for transparency and accountability. Performance metrics provide an objective measure of model effectiveness. Bias and fairness assessments are critical for ensuring ethical AI deployment.\n\"Marketing performance\" is incorrect. Marketing performance is not a compliance reporting element. \"Customer acquisition rates\" is incorrect. Customer acquisition rates are not relevant to compliance reporting. \"Operational costs\" is incorrect. While important, operational costs are not a direct compliance reporting element.",
+    "topic": "Generative AI",
+    "multiSelect": true
+  },
+  {
+    "id": "q203",
+    "text": "What characterizes the cost-effectiveness of generative AI solutions?",
+    "options": [
+      "Maximum team size",
+      "Lowest possible purchase price",
+      "Balance between resource usage and business value",
+      "Highest possible model complexity"
+    ],
+    "correctAnswer": "Balance between resource usage and business value",
+    "explanation": "\"Balance between resource usage and business value\" is correct. Cost-effectiveness involves balancing resource usage with business value.\n\"Lowest possible purchase price\" is incorrect. Purchase price alone doesn't determine cost-effectiveness. \"Highest possible model complexity\" is incorrect. Model complexity isn't directly related to cost-effectiveness. \"Maximum team size\" is incorrect. Team size doesn't determine cost-effectiveness.",
+    "topic": "Generative AI",
+    "multiSelect": false
+  },
+  {
+    "id": "q211",
+    "text": "A media company wants to create a tool that generates unique, high-quality images for marketing materials, including custom artwork and logos. They need a model that can create diverse visual outputs, ensuring high resolution and sharp details, and the ability to control specific attributes of the generated images. Which type of generative model would be the most appropriate choice for this project?",
+    "options": [
+      "Large Language Model (LLM)",
+      "Generative Adversarial Network (GAN)",
+      "Variational Autoencoder (VAE)",
+      "Diffusion Model"
+    ],
+    "correctAnswer": "Diffusion Model",
+    "explanation": "Diffusion models (e.g., Stable Diffusion, DALL\u00b7E) are the state of the art for high-quality image generation. They generate images by progressively denoising random noise, which allows for the production of high-resolution, sharp, and diverse outputs with fine-grained control over visual attributes\u2014making them well suited for marketing and creative applications.\n\nAn LLM is incorrect because it is designed for text generation rather than image synthesis. A GAN is incorrect because, although it can produce sharp images, it is harder to control and less stable to train. A VAE is incorrect because its generated images are typically blurrier and it is more commonly used for representation learning or anomaly detection rather than high-fidelity image generation.",
+    "topic": "Generative AI",
+    "multiSelect": false
+  }
+]

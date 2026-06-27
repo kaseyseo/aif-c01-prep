@@ -1,4 +1,4 @@
-import questionsData from "@/data/questions.json";
+import freeQuestionsData from "@/data/questions-free.json";
 
 export interface Question {
     id: string;
@@ -10,6 +10,8 @@ export interface Question {
     multiSelect?: boolean;
 }
 
+export const FREE_QUESTIONS: Question[] = freeQuestionsData;
+
 export function shuffleArray<T>(array: T[]): T[] {
     const newArray = [...array];
     for (let i = newArray.length - 1; i > 0; i--) {
@@ -19,10 +21,10 @@ export function shuffleArray<T>(array: T[]): T[] {
     return newArray;
 }
 
-export function getRandomQuestions(count: number, excludeIds: string[] = []): Question[] {
+export function getRandomQuestions(pool: Question[], count: number, excludeIds: string[] = []): Question[] {
     // Separate unseen and seen questions
-    const unseen = questionsData.filter(q => !excludeIds.includes(q.id));
-    const seen = questionsData.filter(q => excludeIds.includes(q.id));
+    const unseen = pool.filter(q => !excludeIds.includes(q.id));
+    const seen = pool.filter(q => excludeIds.includes(q.id));
 
     let selected: Question[] = [];
 
@@ -44,11 +46,11 @@ export function getRandomQuestions(count: number, excludeIds: string[] = []): Qu
 }
 
 export function getAllQuestions(): Question[] {
-    return questionsData;
+    return FREE_QUESTIONS;
 }
 
 export function getQuestionCount(): number {
-    return questionsData.length;
+    return FREE_QUESTIONS.length;
 }
 
 export function calculateScore(userAnswers: Record<string, string | string[]>, questions: Question[]) {
