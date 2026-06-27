@@ -21,6 +21,7 @@ export default function PracticeSession() {
     // Configuration
     const mode = searchParams.get("mode") as "mock" | "flashcard" || "mock";
     const feedbackMode = searchParams.get("feedback") as "immediate" | "end" || (mode === "flashcard" ? "immediate" : "end");
+    const token = searchParams.get("token");
 
     // State
     const [questions, setQuestions] = React.useState<Question[]>([]);
@@ -42,9 +43,13 @@ export default function PracticeSession() {
                 let qs: Question[];
 
                 if (mode === "mock") {
-                    // Fetch mock questions from the server-side function
-                    const response = await fetch("/api/mock-questions?count=65");
-                    if (!response.ok) throw new Error("Failed to fetch mock questions");
+                    // Fetch mock questions from the server-side function (requires token)
+                    const tokenParam = token ? `&token=${encodeURIComponent(token)}` : "";
+                    const response = await fetch(`/api/mock-questions?count=65${tokenParam}`);
+                    if (!response.ok) {
+                        const errorData = await response.json().catch(() => ({}));
+                        throw new Error(errorData.error || "Failed to fetch mock questions");
+                    }
                     qs = await response.json();
                 } else {
                     // Flashcard mode: draw from the client-side free pool
