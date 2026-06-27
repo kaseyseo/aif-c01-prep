@@ -1,4 +1,4 @@
-import paidQuestionsData from "../../src/data/questions-paid.json";
+import paidQuestionsData from "@/data/questions-paid.json";
 
 export interface Question {
     id: string;
@@ -19,7 +19,7 @@ function shuffleArray<T>(array: T[]): T[] {
     return newArray;
 }
 
-export default async function handler(request: Request): Promise<Response> {
+export async function GET(request: Request): Promise<Response> {
     const url = new URL(request.url);
     const count = parseInt(url.searchParams.get("count") || "65", 10);
 
