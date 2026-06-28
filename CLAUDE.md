@@ -99,17 +99,35 @@ Flashcard CTA → "Try for Free" (safe anytime). Mock-test CTA → "$4.99" (tent
   - Token validation: no token → 403, invalid token → 403, unused token → generates 65 random questions + marks used, used token within 90 min → returns same set (resumable), used token ≥ 90 min → 403 (expired)
   - Cloudflare KV binding: `TOKENS` namespace (ID: `b7f4a6e4e47548e19c681c751df86008`)
   - Question selection: Fisher–Yates shuffle, option shuffling per request (text-based comparison, not positional)
-  - CORS headers: `Access-Control-Allow-Origin: https://www.aif-c01.com` on all responses (200, 403, 404, 500)
+  - CORS: Allow-list (production `https://www.aif-c01.com` + previews `*.pages.dev`), read from `Origin` header, no wildcard
   - Deployed: `wrangler deploy` to `https://aif-c01-token-worker.kodalab.workers.dev` (live + tested)
-- **Next.js site integration:** Still on branch `step2-worker-integration` (NOT merged to main yet). Changes:
-  - Removed: `src/app/api/mock-questions/route.ts` (no longer needed)
-  - Updated: `src/components/session/PracticeSession.tsx` to fetch from Worker URL instead of `/api/mock-questions`
-  - ⚠️ DO NOT MERGE to main until Stripe + no-token UI are ready, or the live mock test breaks.
 
-**→ Step 3:** Stripe Checkout integration + webhook issuing tokens.
+**✅ Step 3: COMPLETE** — Wire Next.js site to Worker; graceful no-token handling
+- **Implementation:** Branch `step2-worker-integration`, commit `384b192`
+  - Removed: `src/app/api/mock-questions/route.ts` (all logic moved to Worker)
+  - Updated: `src/components/session/PracticeSession.tsx`
+    - Extract `?token=` from URL
+    - If no token: show "Mock test access required" (no Worker fetch, no crash)
+    - If token: fetch from Worker with `?token=X` parameter
+    - Error handling: 403 → "Mock test access required", other errors → "Failed to load questions, please try again."
+    - Graceful error render + Home button (no unhandled exceptions)
+  - Flashcard mode untouched (still client-side)
+- **Verification:** Tested on preview + production origin
+  - ✅ No token → graceful error message
+  - ✅ Valid token → 65 questions load from Worker
+  - ✅ Invalid/expired token (403) → correct error message
+  - ✅ CORS allow-list works for `.pages.dev` previews
+  - ✅ Flashcard mode unchanged
+- **Status:** Branch verified but NOT merged to main (waiting on Step 4)
 
-**→ Step 4:** Wire mock-test CTA to Checkout + deploy site integration branch to main.
-- Gate: Only merge `step2-worker-integration` to main after Step 3 is complete AND a graceful no-token state (payment screen or error) exists.
+**→ Step 4:** Stripe Checkout integration + token webhook
+- Stripe Checkout button on `/practice?mode=mock` when no token
+- Successful checkout → webhook writes token to `mock_tokens` KV, redirects to `/practice?mode=mock&feedback=end&token=X`
+- User resumes mock test with valid token
+- Merge `step2-worker-integration` to main only after this step is complete (both branches together)
+
+**→ Step 5:** Wire mock-test CTA to Checkout + deploy to main
+- Gate: Only merge `step2-worker-integration` to main after Step 4 (Stripe + buy UI) is complete, or live mock test breaks.
 
 ### Working principles
 Small single-purpose tasks; read-only recon before edits; verify site works after each change; only move things server-side when protecting paid content.
