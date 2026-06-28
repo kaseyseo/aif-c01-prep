@@ -30,6 +30,7 @@ export default function PracticeSession() {
     const [isFinished, setIsFinished] = React.useState(false);
     const [showFeedbackForCurrent, setShowFeedbackForCurrent] = React.useState(false);
     const [loading, setLoading] = React.useState(true);
+    const [errorMessage, setErrorMessage] = React.useState<string | null>(null);
     const [startTime] = React.useState(Date.now());
     const [timeSpent, setTimeSpent] = React.useState(0);
 
@@ -42,9 +43,31 @@ export default function PracticeSession() {
                 let qs: Question[];
 
                 if (mode === "mock") {
-                    // Fetch mock questions from the server-side function
-                    const response = await fetch("/api/mock-questions?count=65");
-                    if (!response.ok) throw new Error("Failed to fetch mock questions");
+                    const token = searchParams.get("token");
+
+                    // No token: show error without fetching
+                    if (!token) {
+                        setErrorMessage("Mock test access required");
+                        setLoading(false);
+                        return;
+                    }
+
+                    // Fetch from Worker with token
+                    const workerUrl = `https://aif-c01-token-worker.kodalab.workers.dev/api/mock-questions?count=65&token=${encodeURIComponent(token)}`;
+                    const response = await fetch(workerUrl);
+
+                    // Handle errors: 403 vs other
+                    if (!response.ok) {
+                        if (response.status === 403) {
+                            setErrorMessage("Mock test access required");
+                        } else {
+                            setErrorMessage("Failed to load questions, please try again.");
+                        }
+                        setLoading(false);
+                        return;
+                    }
+
+                    // Success: only reached on 200
                     qs = await response.json();
                 } else {
                     // Flashcard mode: draw from the client-side free pool
@@ -63,6 +86,7 @@ export default function PracticeSession() {
                 setLoading(false);
             } catch (error) {
                 console.error("Error initializing session:", error);
+                setErrorMessage("Failed to load questions, please try again.");
                 setLoading(false);
             }
         };
@@ -158,6 +182,19 @@ export default function PracticeSession() {
     const handleRestart = () => {
         router.push("/");
     };
+
+    if (errorMessage) {
+        return (
+            <div className="flex items-center justify-center min-h-[50vh]">
+                <div className="text-center space-y-4">
+                    <p className="text-lg text-slate-600">{errorMessage}</p>
+                    <Button onClick={handleRestart} variant="outline">
+                        Return to Home
+                    </Button>
+                </div>
+            </div>
+        );
+    }
 
     if (loading) {
         return <div className="flex items-center justify-center min-h-[50vh] text-white">Loading session...</div>;
